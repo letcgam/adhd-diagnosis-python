@@ -2,14 +2,23 @@
 Este projeto tem como objetivo principal desenvolver um modelo de Machine Learning capaz de auxiliar na detecção de Transtorno do Déficit de Atenção com Hiperatividade (TDAH). Para isso, o pipeline inclui etapas essenciais como a coleta e pré-processamento de dados de diversas fontes médicas e psicométricas, seleção de características (features) relevantes e o treinamento de um modelo de classificação robusto, utilizando o algoritmo Random Forest.Estrutura do ProjetoA organização do repositório segue a seguinte estrutura:
 
 tg-adhd-diagnosis/
+
 ├── adhd-diagnosis-data/
+
 │   ├── features.csv
+
 │   ├── CPT_II_ConnersContinuousPerformanceTest.csv
+
 │   ├── hrv_features.csv
+
 │   └── patient_info.csv
+
 ├── models/
+
 │   └── modelo_RF.joblib
+
 ├── main.py  # Arquivo Python com o código principal do projeto
+
 └── saida.txt
 
 
