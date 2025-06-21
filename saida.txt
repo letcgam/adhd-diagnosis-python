@@ -1,0 +1,18 @@
+DataFrames utilizados: ft_df, cpt_2_filtered
+
+Avaliação do Modelo com 30 primeiras features
+
+Acurácia do RF com features selecionadas: 0.8824
+AUC-ROC do RF com features selecionadas: 0.9571
+Matriz de Confusão do RF:
+[[9 1]
+ [1 6]]
+Relatório de Classificação do RF:
+              precision    recall  f1-score   support
+
+           0       0.90      0.90      0.90        10
+           1       0.86      0.86      0.86         7
+
+    accuracy                           0.88        17
+   macro avg       0.88      0.88      0.88        17
+weighted avg       0.88      0.88      0.88        17
