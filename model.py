@@ -254,36 +254,18 @@ def get_RF_model(tts, best_model_features, number_of_features=50):
     return best_model_features
 
 
-def gerar_combinacoes_array(arr_elementos):
-    todas_as_combinacoes = []
-
-    for i in range(1, 5):  # Gera combinações de tamanho 1 a 4
-        for combo in itertools.combinations(arr_elementos, i):
-            todas_as_combinacoes.append(combo)
-
-    return todas_as_combinacoes
-
-
 dfs_to_merge = [
     'ft_df',
-    # 'patient_info',
+    'patient_info',
     'cpt_2_filtered',
-    # 'hrv_df'
+    'hrv_df'
 ]
 
 tts = get_train_test_split(dfs_to_merge)
 
+with open("tg-adhd-diagnosis/saida.txt", "w") as f:
+    f.write(f"\nModelo com as tabelas: " + ", ".join(dfs_to_merge) + "\n")
+    f.write(f"\nShape do DataFrame: {tts['df_shape']}\n\n\n")
+
 best_model_features = get_best_model_features(tts, dfs_to_merge)
-
 final_model_features = get_RF_model(tts, best_model_features, 30)
-
-print(final_model_features)
-
-## Salvar as informações do modelo em um arquivo JSON
-# with open('tg-adhd-diagnosis/best_model_features.json', 'w') as f:
-#     model_dict = {
-#         'dfs_to_merge': dfs_to_merge,
-#         'df_shape': tts['df_shape'],
-#         'final_model_features': final_model_features
-#     }
-#     json.dump(model_dict, f, indent=4)
